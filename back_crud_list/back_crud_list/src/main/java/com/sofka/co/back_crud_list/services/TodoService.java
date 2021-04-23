@@ -15,18 +15,11 @@ public class TodoService {
 
     public Iterable<Todo> listTodoByGroup(Long groupId) {
 
-        /*List<Todo> todoList = new ArrayList<>();
-        for (Todo todo : repository.findAll() ) {
-            if (todo.getGroupListId() == groupId) {
-                todoList.add(todo);
-                System.out.println(todo);
-            }
-        }
 
-        return todoList;*/
+
 
         return () -> StreamSupport.stream(repository.findAll().spliterator(), false)
-                .filter(x -> x.getGroupListId().equals(groupId))
+               // .filter(x -> x.getGroupListId().equals(groupId))
                 .iterator();
     }
 
