@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+
+import StoreProvider from './store';
+import FormList from './Components/FormList';
+import ListGroup from './Components/ListGroup';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return <StoreProvider>
+    <br/>
+    <div className="container border border-danger" style={{padding: '2%'}}> 
+      <FormList />
+      <br/>
+      <ListGroup />
     </div>
-  );
+  </StoreProvider>
 }
 
 export default App;
